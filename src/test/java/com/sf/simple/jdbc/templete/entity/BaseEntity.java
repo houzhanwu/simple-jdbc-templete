@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OrderBy;
+import javax.persistence.Transient;
 
 import com.sf.simple.jdbc.templete.annotation.Operator;
 
@@ -78,7 +79,7 @@ public abstract class BaseEntity implements Serializable{
 	public void setStatus(Byte status) {
 		this.status = status;
 	}
-	
+	@Transient
 	@Operator(targetColumn="create_time",value=" >= ")
 	public Timestamp getStartCreateTime() {
 		return startCreateTime;
@@ -88,6 +89,7 @@ public abstract class BaseEntity implements Serializable{
 		this.startCreateTime = startCreateTime;
 	}
 
+	@Transient
 	@Operator(targetColumn="create_time",value=" <= ")
 	public Timestamp getEndCreateTime() {
 		return endCreateTime;

@@ -29,7 +29,7 @@
 	</appender>
 	
 	<logger name="com.alibaba.druid" level="INFO" />
-	<logger name="com.sf.simple.jdbc.templete.utils" level="DEBUG" />
+	<logger name="com.sf.simple.jdbc.templete.utils" level="INFO" />
 	<!-- 日志输出级别 -->
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />

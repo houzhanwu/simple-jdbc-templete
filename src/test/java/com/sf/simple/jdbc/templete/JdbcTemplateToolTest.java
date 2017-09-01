@@ -121,11 +121,11 @@ public class JdbcTemplateToolTest extends AbstractTransactionalJUnit4SpringConte
 	
 	@Test
 	public void testAll() throws Exception {
-		jtt.execute("delete from t_user", null);
-		jtt.execute("delete from t_user_role", null);
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 100; i++) {
+			jtt.execute("delete from t_user", null);
+			jtt.execute("delete from t_user_role", null);
 			Date start = new Date();
-			for (int j = 0; j < 10; j++) {
+			for (int j = 0; j < 1000; j++) {
 				User u = new User();
 				long currDate = new Date().getTime();
 				u.setLogin(String.valueOf(currDate));
